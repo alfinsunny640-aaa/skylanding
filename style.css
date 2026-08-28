@@ -1,0 +1,232 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    min-height:100svh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Animated Stars */
+.stars{
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(circle,#ffffff 1px,transparent 1px),
+        radial-gradient(circle,#00ff66 1px,transparent 1px);
+    background-size:120px 120px;
+    opacity:.35;
+    animation:moveStars 40s linear infinite;
+    z-index:0;
+}
+
+@keyframes moveStars{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:0 600px;
+    }
+}
+
+/* Main Card */
+
+.card{
+    position:relative;
+    z-index:1;
+
+    width:min(92vw,380px);
+
+    background:#101010;
+
+    border:3px solid #00ff66;
+
+    border-radius:30px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 0 20px #00ff66,
+        0 0 50px rgba(0,255,102,.5);
+
+}
+
+/* Profile */
+
+.profile{
+
+    width:45vw;
+
+    max-width:180px;
+
+    min-width:120px;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #00d9ff;
+
+    box-shadow:
+        0 0 20px cyan,
+        0 0 45px cyan;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+/* Button */
+
+.btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:clamp(12px, 3.5vw, 16px) 24px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:clamp(16px, 4.8vw, 22px);
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    color:#000;
+
+    background:linear-gradient(90deg,#26ff4d,#9efbff);
+
+    transition:transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease, filter 0.2s ease;
+
+}
+
+@media (hover: hover) {
+    .btn:hover{
+
+        transform:translateY(-3px);
+
+        box-shadow:
+            0 0 15px #00ff66,
+            0 0 35px #00ff66;
+
+    }
+}
+
+.btn:active{
+
+    transform:translateY(1px) scale(0.98);
+
+    filter:brightness(0.9);
+
+    box-shadow:
+        0 0 8px #00ff66,
+        0 0 20px rgba(0,255,102,.3);
+
+}
+
+.btn:focus-visible{
+
+    outline:3px solid #00d9ff;
+
+    outline-offset:2px;
+
+}
+
+/* Tablet */
+
+@media (max-width:768px){
+
+.card{
+
+    width:90vw;
+
+    max-width:360px;
+
+    padding:30px 20px;
+
+}
+
+.profile{
+
+    max-width:160px;
+
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:480px){
+
+body{
+
+    padding:15px;
+
+}
+
+.card{
+
+    width:100%;
+
+    padding:25px 18px;
+
+    border-radius:25px;
+
+}
+
+.profile{
+
+    width:140px;
+
+}
+
+}
+
+/* Small Phones */
+
+@media (max-width:360px){
+
+.profile{
+
+    width:120px;
+
+}
+
+}
